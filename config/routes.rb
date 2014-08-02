@@ -9,6 +9,6 @@ Rails.application.routes.draw do
 
   resource :session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create]
-  resources :card_collections
+  resources :decks
   resources :cards
 end

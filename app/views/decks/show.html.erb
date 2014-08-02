@@ -1,0 +1,5 @@
+<h1><%= @deck.name %></h1>
+<h3><%= @deck.description %></h3>
+<% if current_user.admin_of(@deck) %>
+  <%= link_to "New Card", new_card_path %>
+  <% end %>

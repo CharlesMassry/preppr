@@ -1,5 +1,0 @@
-<h1><%= @card_collection.name %></h1>
-<h3><%= @card_collection.description %></h3>
-<% if current_user.admin_of(@card_collection) %>
-  <%= link_to "New Card", new_card_path %>
-  <% end %>
