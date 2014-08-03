@@ -8,6 +8,10 @@ class Deck < ActiveRecord::Base
 
   after_create :make_admin_member_of_group
 
+  def self.search(search)
+    where("name ILIKE ? OR description ILIKE ?", "%#{search}%", "%#{search}%")
+  end
+
   def make_admin_member_of_group
     admin.enters(self)
   end

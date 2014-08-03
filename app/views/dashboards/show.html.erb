@@ -1,4 +1,9 @@
 <h2><%= "Welcome to your dashboard, #{current_user.email}!" %></h2>
   <%= link_to "New Deck", new_deck_path %>
-
+  <div class="Your Decks">
   <%= render current_user.decks %>
+</div>
+
+<div>
+ <%= link_to "Browse Decks", decks_path %>
+  </div>

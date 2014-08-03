@@ -1,0 +1,4 @@
+<%= render "search_form" %>
+<% @search.each do |deck| %>
+  <%= render "decks/deck", deck: deck %>
+<% end %>

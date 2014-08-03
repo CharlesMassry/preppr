@@ -13,6 +13,18 @@ class User < ActiveRecord::Base
     deck.admin == self
   end
 
+  def not_admin_of(deck)
+    !admin_of(deck)
+  end
+
+  def not_member_of(deck)
+    !member_of(deck)
+  end
+
+  def member_of(deck)
+    decks.include?(deck)
+  end
+
   def enters(deck_group)
     DeckMembership.create(user: self, deck: deck_group)
   end

@@ -1,5 +1,10 @@
 <h1><%= @deck.name %></h1>
 <h3><%= @deck.description %></h3>
 <% if current_user.admin_of(@deck) %>
-  <%= link_to "New Card", new_card_path %>
-  <% end %>
+  <%= link_to "New Card", new_deck_card_path(@deck) %>
+<% end %>
+<% if current_user.not_member_of(@deck)%>
+  <%= link_to "Enter Deck", enter_deck_path(@deck), method: :post %>
+<% elsif current_user.member_of(@deck) && current_user.not_admin_of(@deck) %>
+  <%= link_to "Leave Deck", leave_deck_path(@deck), method: :delete %>
+<% end %>

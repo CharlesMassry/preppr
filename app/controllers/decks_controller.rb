@@ -14,6 +14,10 @@ class DecksController < ApplicationController
     @deck = Deck.find(params[:id])
   end
 
+  def index
+    @decks = Deck.all
+  end
+
   private
 
   def deck_params
